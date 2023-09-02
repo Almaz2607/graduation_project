@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Pagination from "./pagination";
 import { paginate } from "../utils/paginate";
 import PropTypes from "prop-types";
+import Pagination from "./common/pagination";
 
 function RoomsList({ rooms }) {
     const count = rooms.length;
