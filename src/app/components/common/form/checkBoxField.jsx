@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const CheckBoxField = ({ name, value, onChange, children, error }) => {
-    console.log(error);
     const handleChange = () => {
         onChange({ name, value: !value });
     };
