@@ -5,6 +5,7 @@ import About from "../components/pages/about";
 import Rooms from "../components/pages/roomsPage/rooms";
 import Login from "../components/login";
 import Attractions from "../components/pages/attractions";
+import AvailableRooms from "../components/pages/searchRooms/availableRooms";
 
 const Page = () => {
     return (
@@ -13,6 +14,7 @@ const Page = () => {
                 <Route path="/" exact component={Home} />
                 <Route path="/about" component={About} />
                 <Route path="/attractions" component={Attractions} />
+                <Route path="/available" component={AvailableRooms} />
                 <Route path="/rooms/:roomId?" component={Rooms} />
                 <Route path="/login/:type?" component={Login} />
                 <Redirect to="/" />

@@ -16,16 +16,20 @@ const Login = () => {
     };
 
     return (
-        <div className="container mt-5">
+        <div className="container my-5">
             <div className="row">
                 <div className="col-md-6 offset-md-3 shadow p-4">
                     {formType === "register" ? (
                         <>
                             <h3 className="mb-4">Register</h3>
                             <RegisterForm />
-                            <p>
+                            <p className="mt-3">
                                 Есть аккаунт?{" "}
-                                <a role="button" onClick={toggleFormType}>
+                                <a
+                                    className="link-primary text-decoration-none"
+                                    role="button"
+                                    onClick={toggleFormType}
+                                >
                                     Войдите!
                                 </a>
                             </p>
@@ -34,9 +38,13 @@ const Login = () => {
                         <>
                             <h3 className="mb-4">Login</h3>
                             <LoginForm />
-                            <p>
+                            <p className="mt-3">
                                 Нет аккаунта?{" "}
-                                <a role="button" onClick={toggleFormType}>
+                                <a
+                                    className="link-primary text-decoration-none"
+                                    role="button"
+                                    onClick={toggleFormType}
+                                >
                                     Зарегистрируйтесь!
                                 </a>
                             </p>
