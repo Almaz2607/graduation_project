@@ -1,5 +1,6 @@
 import React from "react";
 import SelectionBlock from "../../common/selectionBlock";
+import { Link } from "react-router-dom";
 
 function Room() {
     return (
@@ -181,9 +182,12 @@ function Room() {
                                         <p className="room-price__total-price">
                                             Итого: $900
                                         </p>
-                                        <button className="room-price__booking">
+                                        <Link
+                                            to="/booking"
+                                            className="room-price__booking"
+                                        >
                                             Забронировать номер
-                                        </button>
+                                        </Link>
                                         <p className="room-price__text-info">
                                             Остались вопросы? Звони
                                             +(996)111-777-333
