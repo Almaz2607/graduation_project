@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import CheckBoxField from "../common/form/checkBoxField";
 import RadioField from "../common/form/radioField";
 import TextField from "../common/form/textField";
+import { Link } from "react-router-dom";
 
 const Payment = () => {
     const [data, setData] = useState({
@@ -113,9 +114,12 @@ const Payment = () => {
                                         />
                                     </div>
                                 </div>
-                                <button className="pay__column-button-payment">
+                                <Link
+                                    to="/accepted"
+                                    className="pay__column-button-payment"
+                                >
                                     ОПЛАТИТЬ НОМЕР
-                                </button>
+                                </Link>
                             </div>
                         </div>
                         <div className="pay__column">

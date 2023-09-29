@@ -7,6 +7,7 @@ import Login from "../components/login";
 import Attractions from "../components/pages/attractions";
 import AvailableRooms from "../components/pages/searchRooms/availableRooms";
 import Payment from "../components/pages/payment";
+import ConfirmPayment from "../components/pages/confirmPayment";
 
 const Page = () => {
     return (
@@ -18,6 +19,7 @@ const Page = () => {
                 <Route path="/available" component={AvailableRooms} />
                 <Route path="/rooms/:roomId?" component={Rooms} />
                 <Route path="/booking" component={Payment} />
+                <Route path="/accepted" component={ConfirmPayment} />
                 <Route path="/login/:type?" component={Login} />
                 <Redirect to="/" />
             </Switch>

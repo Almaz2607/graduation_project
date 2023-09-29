@@ -14,7 +14,7 @@ const Footer = () => {
                         777-111-333
                     </p>
                     <p className="footer__column">
-                        Почта:issyk-kul2023@gmail.com Телеграмм:
+                        Почта: issyk-kul2023@gmail.com Телеграмм:
                         t.me/almazkubakaev
                     </p>
                 </div>
