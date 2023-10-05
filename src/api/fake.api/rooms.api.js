@@ -20,31 +20,31 @@ const rooms = [
     {
         _id: "67rdca3eeb7f6fgeed471855",
         number: 1,
-        roomClass: "Стандарт",
+        class: "Стандарт",
+        numberOfGuests: 2,
+        price: 35,
+        available: false
+    },
+    {
+        _id: "67rdca3eeb7f6fgeed471806",
+        number: 2,
+        class: "Стандарт",
+        numberOfGuests: 3,
+        price: 45,
+        available: false
+    },
+    {
+        _id: "67rdca3eeb7f6fgeed471317",
+        number: 3,
+        class: "Стандарт",
         numberOfGuests: 2,
         price: 35,
         available: true
     },
     {
-        _id: "67rdca3eeb7f6fgeed471806",
-        number: 2,
-        roomClass: "Стандарт",
-        numberOfGuests: 3,
-        price: 45,
-        available: true
-    },
-    {
-        _id: "67rdca3eeb7f6fgeed471317",
-        number: 3,
-        roomClass: "Полулюкс",
-        numberOfGuests: 2,
-        price: 55,
-        available: true
-    },
-    {
         _id: "67rdca3eeb7f6fgeed471018",
         number: 4,
-        roomClass: "Полулюкс",
+        class: "Полулюкс",
         numberOfGuests: 3,
         price: 65,
         available: true
@@ -52,49 +52,67 @@ const rooms = [
     {
         _id: "67rdca3eeb7f6fgeed471115",
         number: 5,
-        roomClass: "Люкс",
+        class: "Стандарт",
         numberOfGuests: 2,
-        price: 75,
+        price: 35,
         available: true
     },
     {
         _id: "67rdca3eeb7f6fgeed471080",
         number: 6,
-        roomClass: "Люкс",
+        class: "Стандарт",
         numberOfGuests: 3,
-        price: 85,
+        price: 45,
+        available: true
+    },
+    {
+        _id: "67rdca3eeb7f6fgeed471621",
+        number: 7,
+        class: "Стандарт",
+        numberOfGuests: 2,
+        price: 35,
+        available: true
+    },
+    {
+        _id: "67rdca3eeb7f6fgeed471102",
+        number: 8,
+        class: "Стандарт",
+        numberOfGuests: 3,
+        price: 45,
+        available: true
+    },
+    {
+        _id: "67rdca3eeb7f6fgeed471470",
+        number: 9,
+        class: "Стандарт",
+        numberOfGuests: 2,
+        price: 35,
+        available: true
+    },
+    {
+        _id: "67rdca3eeb7f6fgeed471824",
+        number: 10,
+        class: "Люкс",
+        numberOfGuests: 2,
+        price: 75,
+        available: true
+    },
+    {
+        _id: "67rdca3eeb7f6fgeed47181f",
+        number: 11,
+        class: "Полулюкс",
+        numberOfGuests: 2,
+        price: 55,
+        available: true
+    },
+    {
+        _id: "67rdca3eeb7f6fgeed47391r",
+        number: 12,
+        class: "Стандарт",
+        numberOfGuests: 2,
+        price: 35,
         available: true
     }
-    // {
-    //     _id: "67rdca3eeb7f6fgeed471821",
-    //     number: 7
-    // },
-    // {
-    //     _id: "67rdca3eeb7f6fgeed471822",
-    //     number: 8,
-    //     class: "standard",
-    //     price: 45,
-    //     booking: false,
-    // },
-    // {
-    //     _id: "67rdca3eeb7f6fgeed471823",
-    //     number: 9
-    // },
-    // {
-    //     _id: "67rdca3eeb7f6fgeed471824",
-    //     number: 10
-    // },
-    // {
-    //     _id: "67rdca3eeb7f6fgeed47181f",
-    //     number: 11,
-    //     class: "standard",
-    //     price: 45,
-    //     booking: false,
-    // },
-    // {
-    //     _id: "67rdca3eeb7f6fgeed47181r",
-    //     number: 12
-    // }
 ];
 
 // if (!localStorage.getItem("users")) {

@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
 import SelectField from "../../common/form/selectField";
-import ItemRoom from "./itemRoom";
+import RoomItem from "./roomItem";
 import api from "../../../../api";
+import Loader from "../../common/loader";
 
 const AvailableRooms = () => {
+    const [rooms, setRooms] = useState([]);
     const [data, setData] = useState({
         roomClass: "",
         roomPrice: ""
     });
-    const [rooms, setRooms] = useState([]);
+
     const roomClasses = [
         { value: "standard", name: "Стандарт" },
         { value: "suite", name: "Полулюкс" },
@@ -19,6 +21,7 @@ const AvailableRooms = () => {
         { value: "increase", name: "От дешевых к дорогим" },
         { value: "decrease", name: "От дорогих к дешевым" }
     ];
+
     useEffect(() => {
         api.rooms.fetchAll().then((data) => setRooms(data));
     }, []);
@@ -30,12 +33,10 @@ const AvailableRooms = () => {
         }));
     };
 
-    if (rooms.length === 0) return;
-
     return (
         <div className="available-rooms">
             <div className="_container">
-                <section className="available-rooms__top">
+                <div className="available-rooms__top">
                     <div className="available-rooms__column-left">
                         <div className="available-rooms___title title">
                             <p className="title__text">Доступные номера</p>
@@ -65,15 +66,19 @@ const AvailableRooms = () => {
                             </div>
                         </div>
                     </div>
-                </section>
-                {rooms.map((room) => (
-                    <ItemRoom
-                        key={room._id}
-                        roomClass={room.roomClass}
-                        numberOfGuests={room.numberOfGuests}
-                        price={room.price}
-                    />
-                ))}
+                </div>
+                {rooms.length !== 0 ? (
+                    rooms.map((room) => (
+                        <RoomItem
+                            key={room._id}
+                            roomClass={room.roomClass}
+                            numberOfGuests={room.numberOfGuests}
+                            price={room.price}
+                        />
+                    ))
+                ) : (
+                    <Loader />
+                )}
             </div>
         </div>
     );
