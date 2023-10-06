@@ -1,9 +1,20 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const GuestReview = ({ text, name, surname, date }) => {
+const GuestReview = ({ path, text, name, surname, date }) => {
+    const getReviewClass = (path) => {
+        const initClass = "review-block";
+        if (path === "") {
+            return `food__review  ${initClass}`;
+        } else if (path === "about") {
+            return `reviews__item  ${initClass}`;
+        } else if (path === "rooms") {
+            return `room-reviews__item  ${initClass}`;
+        }
+    };
+
     return (
-        <div className="reviews__item review-block">
+        <div className={getReviewClass(path)}>
             <p className="review-block__text">{text}</p>
             <div className="review-block__signature">
                 <div className="review-block__photo">
@@ -21,6 +32,7 @@ const GuestReview = ({ text, name, surname, date }) => {
 };
 
 GuestReview.propTypes = {
+    path: PropTypes.string,
     text: PropTypes.string,
     name: PropTypes.string,
     surname: PropTypes.string,

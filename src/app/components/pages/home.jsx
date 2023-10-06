@@ -1,8 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import SelectionBlock from "../common/selectionBlock";
+import Loader from "../common/loader";
+import GuestReview from "../common/guestReview";
+import useReviews from "../../hooks/useReviews";
 
 function Home() {
+    const { reviews, pathName } = useReviews();
+
+    if (reviews.length === 0) return <Loader />;
+    const { text, name, surname, creationDate } = reviews[0];
+
     return (
         <div className="home">
             <div className="home__image">
@@ -111,26 +119,15 @@ function Home() {
                                 </div>
                             </div>
                         </div>
-                        <div className="food__review review-block">
-                            <p className="review-block__text">
-                                Расположение комфортное, рядом магазины,
-                                транспорт, горы, озеро. Быть готовым к тому, что
-                                в номере тонкие стены и шумные соседи. Для
-                                медитаций и уединения номер не подойдет.
-                                Дружелюбное и внимательное отношение.
-                            </p>
-                            <div className="review-block__signature">
-                                <div className="review-block__circle" />
-                                <div className="review-block__info">
-                                    <p className="review-block__name">
-                                        Андрей Пархоменко
-                                    </p>
-                                    <p className="review-block__date">
-                                        15.07.2023
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                        {
+                            <GuestReview
+                                path={pathName}
+                                text={text}
+                                name={name}
+                                surname={surname}
+                                date={creationDate}
+                            />
+                        }
                     </div>
                     <div className="food__column_right">
                         <div className="food__item_2 item-block">

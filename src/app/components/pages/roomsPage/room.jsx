@@ -1,8 +1,17 @@
 import React from "react";
-import SelectionBlock from "../../common/selectionBlock";
 import { Link } from "react-router-dom";
+import SelectionBlock from "../../common/selectionBlock";
+import GuestReview from "../../common/guestReview";
+import Loader from "../../common/loader";
+import useReviews from "../../../hooks/useReviews";
 
-function Room() {
+const Room = () => {
+    const { reviews, pathName } = useReviews();
+
+    if (reviews.length === 0) return <Loader />;
+
+    const cropReviews = reviews.slice(0, 4);
+
     return (
         <div className="room">
             <SelectionBlock />
@@ -71,7 +80,7 @@ function Room() {
                     <div className="room-price__row">
                         <div className="room-price__column">
                             <div className="room-price__item">
-                                <div className="room-price__circle review-block__circle" />
+                                <div className="room-price__circle review-block__photo" />
                                 <p className="review-block__text">
                                     Расположение комфортное, рядом магазины,
                                     транспорт, горы, озеро. Быть готовым к тому,
@@ -79,7 +88,7 @@ function Room() {
                                 </p>
                             </div>
                             <div className="room-price__item">
-                                <div className="room-price__circle review-block__circle" />
+                                <div className="room-price__circle review-block__photo" />
                                 <p className="review-block__text">
                                     Расположение комфортное, рядом магазины,
                                     транспорт, горы, озеро. Быть готовым к тому,
@@ -87,7 +96,7 @@ function Room() {
                                 </p>
                             </div>
                             <div className="room-price__item">
-                                <div className="room-price__circle review-block__circle" />
+                                <div className="room-price__circle review-block__photo" />
                                 <p className="review-block__text">
                                     Расположение комфортное, рядом магазины,
                                     транспорт, горы, озеро. Быть готовым к тому,
@@ -97,7 +106,7 @@ function Room() {
                         </div>
                         <div className="room-price__column">
                             <div className="room-price__item">
-                                <div className="room-price__circle review-block__circle" />
+                                <div className="room-price__circle review-block__photo" />
                                 <p className="review-block__text">
                                     Расположение комфортное, рядом магазины,
                                     транспорт, горы, озеро. Быть готовым к тому,
@@ -105,7 +114,7 @@ function Room() {
                                 </p>
                             </div>
                             <div className="room-price__item">
-                                <div className="room-price__circle review-block__circle" />
+                                <div className="room-price__circle review-block__photo" />
                                 <p className="review-block__text">
                                     Расположение комфортное, рядом магазины,
                                     транспорт, горы, озеро. Быть готовым к тому,
@@ -113,7 +122,7 @@ function Room() {
                                 </p>
                             </div>
                             <div className="room-price__item">
-                                <div className="room-price__circle review-block__circle" />
+                                <div className="room-price__circle review-block__photo" />
                                 <p className="review-block__text">
                                     Расположение комфортное, рядом магазины,
                                     транспорт, горы, озеро. Быть готовым к тому,
@@ -203,8 +212,18 @@ function Room() {
                         <p className="title__text">Отзывы гостей</p>
                     </div>
                     <div className="room-reviews__row">
-                        <div className="room-reviews__column">
-                            <div className="room-reviews__item review-block">
+                        <div className="room-reviews__items">
+                            {cropReviews.map((review) => (
+                                <GuestReview
+                                    key={review._id}
+                                    path={pathName}
+                                    text={review.text}
+                                    name={review.name}
+                                    surname={review.surname}
+                                    date={review.creationDate}
+                                />
+                            ))}
+                            {/* <div className="room-reviews__item review-block">
                                 <p className="review-block__text">
                                     Расположение комфортное, рядом магазины,
                                     транспорт, горы, озеро. Быть готовым к тому,
@@ -223,75 +242,13 @@ function Room() {
                                         </p>
                                     </div>
                                 </div>
-                            </div>
-                            <div className="room-reviews__item review-block">
-                                <p className="review-block__text">
-                                    Расположение комфортное, рядом магазины,
-                                    транспорт, горы, озеро. Быть готовым к тому,
-                                    что в номере тонкие стены и шумные соседи.
-                                    Для медитаций и уединения номер не подойдет.
-                                    Дружелюбное и внимательное отношение.
-                                </p>
-                                <div className="review-block__signature">
-                                    <div className="review-block__circle" />
-                                    <div className="review-block__info">
-                                        <p className="review-block__name">
-                                            Андрей Пархоменко
-                                        </p>
-                                        <p className="review-block__date">
-                                            15.07.2023
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="room-reviews__column">
-                            <div className="room-reviews__item review-block">
-                                <p className="review-block__text">
-                                    Расположение комфортное, рядом магазины,
-                                    транспорт, горы, озеро. Быть готовым к тому,
-                                    что в номере тонкие стены и шумные соседи.
-                                    Для медитаций и уединения номер не подойдет.
-                                    Дружелюбное и внимательное отношение.
-                                </p>
-                                <div className="review-block__signature">
-                                    <div className="review-block__circle" />
-                                    <div className="review-block__info">
-                                        <p className="review-block__name">
-                                            Андрей Пархоменко
-                                        </p>
-                                        <p className="review-block__date">
-                                            15.07.2023
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="room-reviews__item review-block">
-                                <p className="review-block__text">
-                                    Расположение комфортное, рядом магазины,
-                                    транспорт, горы, озеро. Быть готовым к тому,
-                                    что в номере тонкие стены и шумные соседи.
-                                    Для медитаций и уединения номер не подойдет.
-                                    Дружелюбное и внимательное отношение.
-                                </p>
-                                <div className="review-block__signature">
-                                    <div className="review-block__circle" />
-                                    <div className="review-block__info">
-                                        <p className="review-block__name">
-                                            Андрей Пархоменко
-                                        </p>
-                                        <p className="review-block__date">
-                                            15.07.2023
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </section>
             </div>
         </div>
     );
-}
+};
 
 export default Room;
