@@ -1,30 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Calendar from "./calendar/calendar";
 
 const SelectionBlock = () => {
+    const [showCalendar, setShowCalendar] = useState(false);
+
+    const handlerClick = () => {
+        setShowCalendar((prev) => !prev);
+    };
+
     return (
         <div className="selection">
             <div className="selection__container _container">
                 <div className="selection__body">
                     <div className="selection__column">
-                        <Link to="/calendar" className="selection__link">
+                        <Link to="/calendar" className="selection__button">
                             Дата заезда
                         </Link>
-                        <p className="selection__text">03.08</p>
+                        <div className="selection__text">03.08</div>
                     </div>
                     <div className="selection__column">
-                        <Link to="/calendar" className="selection__link">
+                        <button
+                            className="selection__button"
+                            onClick={handlerClick}
+                        >
                             Дата выезда
-                        </Link>
-                        <p className="selection__text">15.08</p>
+                        </button>
+                        <div className="selection__text">15.08</div>
                     </div>
                     <div className="selection__column">
                         <button className="selection__button">Номер</button>
-                        <p className="selection__text">Люкс</p>
+                        <div className="selection__text">Люкс</div>
                     </div>
                     <div className="selection__column">
                         <button className="selection__button">Гостей</button>
-                        <p className="selection__text">2 Гостей</p>
+                        <div className="selection__text">2 Гостей</div>
                     </div>
                     <div className="selection__column-total">
                         <Link to="/available" className="selection__link-total">
@@ -32,6 +42,7 @@ const SelectionBlock = () => {
                         </Link>
                     </div>
                 </div>
+                {showCalendar && <Calendar />}
             </div>
         </div>
     );

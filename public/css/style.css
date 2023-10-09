@@ -290,19 +290,16 @@ body {
     color: antiquewhite;
     padding: 5px;
 }
-.selection__link {
-    text-decoration: none;
+.selection__button {
+    background-color: #8a2e2e;
     cursor: pointer;
-}
-.selection__text {
-    margin-bottom: 0;
 }
 .selection__link-total {
     line-height: 120%;
     background-color: rgb(221, 179, 124);
-    text-decoration: none;
     color: #8a2e2e;
     padding: 5px;
+    text-decoration: none;
     cursor: pointer;
 }
 /* ----CALENDAR--------------------------- */
@@ -310,14 +307,11 @@ body {
     padding: 0px 40px;
 }
 .calendar__body {
-    width: 50%;
-    border-top: 1px solid #a5a5a5;
-    border-left: 1px solid #878787;
-    border-right: 1px solid #878787;
-    border-bottom: 2px solid #878787;
+    width: 35%;
+    border: 1px solid #d3d3d3;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 0 0 1px #686868, 0 6px 20px 4px #888;
+    box-shadow: 0 0 0 1px #bfbfbf, 0 4px 10px 4px #c8c8c8;
     margin: 40px 0;
 }
 /* ----CALENDAR-TOP------------------- */
@@ -330,11 +324,10 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #b99c6d;
     padding: 15px;
 }
 .monitor__date > span {
-    font-size: 16px;
+    font-size: 14px;
 }
 .monitor__month {
     font-weight: 600;
@@ -349,7 +342,7 @@ body {
     line-height: 20px;
     border: unset;
     border-radius: 4px;
-    background-color: rgb(115, 150, 220);
+    background-color: rgb(148, 163, 194);
     margin-right: 3px;
 }
 .monitor__button:hover {
@@ -359,13 +352,11 @@ body {
 .grid__container-header {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    border-bottom: 1px solid #7e7e7e;
 }
 .grid__cell-header-wrapper {
     height: 24px;
     display: flex;
-    justify-content: end;
-    background-color: #b99c6d;
+    justify-content: center;
 }
 .grid__cell-header-wrapper > div {
     font-size: 11px;
@@ -374,44 +365,53 @@ body {
     margin-right: 7px;
 }
 .grid__cell-header_grey {
-    color: #6c6c6c;
+    color: #a4a4a4;
 }
 .grid__container {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: repeat(6, 1fr);
-    gap: 1px;
-    background-color: #7e7e7e;
+    gap: 4px;
+    padding: 4px;
 }
 .grid__container > div {
-    min-width: 60px;
-    min-height: 40px;
-}
-.grid__cell {
-    background-color: #b99c6d;
-}
-.grid__cell_lighter {
-    background-color: #d4c0a0;
-}
-.grid__cell-row {
-    display: flex;
-    justify-content: flex-end;
-}
-.grid__cell-row > div {
-    width: 20px;
-    height: 20px;
-    margin: 2px;
-    font-size: 11px;
+    min-width: 39px;
+    min-height: 39px;
+    font-size: 12px;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 7px;
+    cursor: pointer;
+    background-color: #eeeeee;
 }
 .grid__cell-day_red {
-    border-radius: 50%;
-    background-color: red;
+    color: red;
+}
+.grid__cell_yellow {
+    min-width: 39px;
+    min-height: 39px;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+    cursor: pointer;
+    background-color: yellow;
+}
+.grid__cell-month:hover {
+    min-width: 39px;
+    min-height: 39px;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+    cursor: pointer;
+    background-color: #d4d4d4;
 }
 .grid__cell-month_lighter {
-    color: #dcdcdc;
+    color: #c5c5c5;
 }
 /* ----SECTION-COMFORT---------------------------- */
 .comfort__container {
