@@ -1,5 +1,5 @@
 import React from "react";
-import SelectionBlock from "../../common/selectionBlock";
+import SelectionBlock from "../../common/selectionRoom/selectionBlock";
 
 function RoomsList() {
     return (

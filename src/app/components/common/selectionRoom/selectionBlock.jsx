@@ -7,15 +7,15 @@ const SelectionBlock = () => {
             <div className="selection__container _container">
                 <div className="selection__body">
                     <div className="selection__column">
-                        <button className="selection__button">
+                        <Link to="/calendar" className="selection__link">
                             Дата заезда
-                        </button>
+                        </Link>
                         <p className="selection__text">03.08</p>
                     </div>
                     <div className="selection__column">
-                        <button className="selection__button">
+                        <Link to="/calendar" className="selection__link">
                             Дата выезда
-                        </button>
+                        </Link>
                         <p className="selection__text">15.08</p>
                     </div>
                     <div className="selection__column">
