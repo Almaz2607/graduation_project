@@ -20,98 +20,134 @@ const rooms = [
     {
         _id: "67rdca3eeb7f6fgeed471855",
         number: 1,
-        class: "Стандарт",
+        class: "standard",
         numberOfGuests: 2,
         price: 35,
-        available: false
+        available: false,
+        type: "",
+        arrivalDate: "",
+        departureDate: ""
     },
     {
         _id: "67rdca3eeb7f6fgeed471806",
         number: 2,
-        class: "Стандарт",
+        class: "standard",
         numberOfGuests: 3,
         price: 45,
-        available: false
+        available: false,
+        type: "",
+        arrivalDate: "",
+        departureDate: ""
     },
     {
         _id: "67rdca3eeb7f6fgeed471317",
         number: 3,
-        class: "Стандарт",
+        class: "standard",
         numberOfGuests: 2,
         price: 35,
-        available: true
+        available: true,
+        type: "",
+        arrivalDate: "",
+        departureDate: ""
     },
     {
         _id: "67rdca3eeb7f6fgeed471018",
         number: 4,
-        class: "Полулюкс",
+        class: "suite",
         numberOfGuests: 3,
         price: 65,
-        available: true
+        available: true,
+        type: "",
+        arrivalDate: "",
+        departureDate: ""
     },
     {
         _id: "67rdca3eeb7f6fgeed471115",
         number: 5,
-        class: "Стандарт",
+        class: "standard",
         numberOfGuests: 2,
         price: 35,
-        available: true
+        available: true,
+        type: "",
+        arrivalDate: "",
+        departureDate: ""
     },
     {
         _id: "67rdca3eeb7f6fgeed471080",
         number: 6,
-        class: "Стандарт",
+        class: "standard",
         numberOfGuests: 3,
         price: 45,
-        available: true
+        available: true,
+        type: "",
+        arrivalDate: "",
+        departureDate: ""
     },
     {
         _id: "67rdca3eeb7f6fgeed471621",
         number: 7,
-        class: "Стандарт",
+        class: "standard",
         numberOfGuests: 2,
         price: 35,
-        available: true
+        available: true,
+        type: "",
+        arrivalDate: "",
+        departureDate: ""
     },
     {
         _id: "67rdca3eeb7f6fgeed471102",
         number: 8,
-        class: "Стандарт",
+        class: "standard",
         numberOfGuests: 3,
         price: 45,
-        available: true
+        available: true,
+        type: "",
+        arrivalDate: "",
+        departureDate: ""
     },
     {
         _id: "67rdca3eeb7f6fgeed471470",
         number: 9,
-        class: "Стандарт",
+        class: "standard",
         numberOfGuests: 2,
         price: 35,
-        available: true
+        available: true,
+        type: "",
+        arrivalDate: "",
+        departureDate: ""
     },
     {
         _id: "67rdca3eeb7f6fgeed471824",
         number: 10,
-        class: "Люкс",
+        class: "senior",
         numberOfGuests: 2,
         price: 75,
-        available: true
+        available: true,
+        type: "",
+        arrivalDate: "",
+        departureDate: ""
     },
     {
         _id: "67rdca3eeb7f6fgeed47181f",
         number: 11,
-        class: "Полулюкс",
+        class: "suite",
         numberOfGuests: 2,
         price: 55,
-        available: true
+        available: true,
+        type: "",
+        arrivalDate: "",
+        departureDate: ""
     },
     {
         _id: "67rdca3eeb7f6fgeed47391r",
         number: 12,
-        class: "Стандарт",
+        class: "standard",
         numberOfGuests: 2,
         price: 35,
-        available: true
+        available: true,
+        type: "",
+        arrivalDate: "",
+        departureDate: ""
     }
 ];
 

@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const RoomItem = ({ roomClass, numberOfGuests, price }) => {
+const RoomItem = ({ id, roomClass, numberOfGuests, price, onSelectedItem }) => {
     return (
         <div className="available-rooms__body">
             <div className="available-rooms__column-image">
@@ -30,7 +30,12 @@ const RoomItem = ({ roomClass, numberOfGuests, price }) => {
                 <p className="available-rooms__text">
                     Включены: завтрак, спортзал, парковка, бесплатный Wi-Fi
                 </p>
-                <button className="available-rooms__button">Подробно</button>
+                <button
+                    className="available-rooms__button"
+                    onClick={() => onSelectedItem(id)}
+                >
+                    Подробно
+                </button>
             </div>
         </div>
     );
@@ -39,7 +44,9 @@ const RoomItem = ({ roomClass, numberOfGuests, price }) => {
 RoomItem.propTypes = {
     roomClass: PropTypes.string,
     numberOfGuests: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-    price: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
+    price: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    id: PropTypes.string,
+    onSelectedItem: PropTypes.func
 };
 
 export default RoomItem;

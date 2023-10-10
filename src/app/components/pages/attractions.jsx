@@ -1,5 +1,5 @@
 import React from "react";
-import SelectionBlock from "../common/selectionRoom/selectionBlock";
+import SelectionBlock from "../common/selectionBlock";
 
 const Attractions = () => {
     return (

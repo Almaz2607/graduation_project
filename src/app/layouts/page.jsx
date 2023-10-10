@@ -9,7 +9,7 @@ import AvailableRooms from "../components/pages/searchRooms/availableRooms";
 import Payment from "../components/pages/payment";
 import ConfirmPayment from "../components/pages/confirmPayment";
 import Administrator from "../components/pages/adminPage/admin";
-import Calendar from "../components/common/selectionRoom/calendar/calendar";
+import Calendar from "../components/common/calendar";
 
 const Page = () => {
     return (
@@ -19,8 +19,8 @@ const Page = () => {
                 <Route path="/calendar" component={Calendar} />
                 <Route path="/about" component={About} />
                 <Route path="/attractions" component={Attractions} />
-                <Route path="/available" component={AvailableRooms} />
-                <Route path="/rooms/:roomId?" component={Rooms} />
+                <Route path="/available/:roomId?" component={AvailableRooms} />
+                <Route path="/rooms" component={Rooms} />
                 <Route path="/login/:type?" component={Login} />
                 <Route path="/admin/:status?" component={Administrator} />
                 <Route path="/booking" component={Payment} />

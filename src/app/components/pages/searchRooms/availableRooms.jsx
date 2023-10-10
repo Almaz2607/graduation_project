@@ -1,84 +1,67 @@
-import React, { useEffect, useState } from "react";
-import SelectField from "../../common/form/selectField";
+import React, { useState } from "react";
 import RoomItem from "./roomItem";
-import api from "../../../../api";
 import Loader from "../../common/loader";
+import Pagination from "../../common/pagination";
+import { paginate } from "../../../utils/paginate";
+import SelectionRooms from "./selectionRooms";
+import useRooms from "../../../hooks/useRooms";
 
 const AvailableRooms = () => {
-    const [rooms, setRooms] = useState([]);
-    const [data, setData] = useState({
-        roomClass: "",
-        roomPrice: ""
-    });
+    const [currentPage, setCurrentPage] = useState(1);
+    const [selectedClass, setSelectedClass] = useState();
+    const [selectedPrice, setSelectedPrice] = useState();
+    const { rooms } = useRooms();
+    const pageSize = 4;
 
-    const roomClasses = [
-        { value: "standard", name: "Стандарт" },
-        { value: "suite", name: "Полулюкс" },
-        { value: "senior", name: "Люкс" },
-        { value: "allways", name: "Номера всех классов" }
-    ];
-    const roomPrices = [
-        { value: "increase", name: "От дешевых к дорогим" },
-        { value: "decrease", name: "От дорогих к дешевым" }
-    ];
-
-    useEffect(() => {
-        api.rooms.fetchAll().then((data) => setRooms(data));
-    }, []);
-
-    const hanldeChange = (target) => {
-        setData((prevState) => ({
-            ...prevState,
-            [target.name]: target.value
-        }));
+    const handlePageChange = (pageIndex) => {
+        setCurrentPage(pageIndex);
     };
+
+    const handleRoomIdSelect = (id) => {
+        console.log(id);
+    };
+
+    const handleSelectedClass = (roomClass) => {
+        setSelectedClass(roomClass);
+    };
+
+    const handleSelectedPrice = (roomPrice) => {
+        setSelectedPrice(roomPrice);
+    };
+    console.log(selectedPrice);
+
+    if (rooms.length === 0) return <Loader />;
+
+    const filteredRooms =
+        selectedClass && selectedClass !== "allways"
+            ? rooms.filter((room) => room.class === selectedClass)
+            : rooms;
+    const count = filteredRooms.length;
+    const roomCrop = paginate(filteredRooms, currentPage, pageSize);
 
     return (
         <div className="available-rooms">
             <div className="_container">
-                <div className="available-rooms__top">
-                    <div className="available-rooms__column-left">
-                        <div className="available-rooms___title title">
-                            <p className="title__text">Доступные номера</p>
-                        </div>
-                    </div>
-                    <div className="available-rooms__column-right">
-                        <div className="available-rooms__fields">
-                            <div className="available-rooms__field">
-                                <SelectField
-                                    label=""
-                                    name="roomClass"
-                                    onChange={hanldeChange}
-                                    value={data.roomClass}
-                                    defaultOption="Выберите класс номера"
-                                    options={roomClasses}
-                                />
-                            </div>
-                            <div className="available-rooms__field">
-                                <SelectField
-                                    label=""
-                                    name="roomPrice"
-                                    onChange={hanldeChange}
-                                    value={data.roomPrice}
-                                    defaultOption="Выберите по цене"
-                                    options={roomPrices}
-                                />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {rooms.length !== 0 ? (
-                    rooms.map((room) => (
-                        <RoomItem
-                            key={room._id}
-                            roomClass={room.roomClass}
-                            numberOfGuests={room.numberOfGuests}
-                            price={room.price}
-                        />
-                    ))
-                ) : (
-                    <Loader />
-                )}
+                <SelectionRooms
+                    onSelectedClass={handleSelectedClass}
+                    onSelectedPrice={handleSelectedPrice}
+                />
+                {roomCrop.map((room) => (
+                    <RoomItem
+                        key={room._id}
+                        id={room._id}
+                        roomClass={room.roomClass}
+                        numberOfGuests={room.numberOfGuests}
+                        price={room.price}
+                        onSelectedItem={handleRoomIdSelect}
+                    />
+                ))}
+                <Pagination
+                    itemsCount={count}
+                    pageSize={pageSize}
+                    currentPage={currentPage}
+                    onPageChange={handlePageChange}
+                />
             </div>
         </div>
     );

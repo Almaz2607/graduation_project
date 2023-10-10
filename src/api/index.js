@@ -1,9 +1,9 @@
 import rooms from "./fake.api/rooms.api";
-import professions from "./fake.api/professions.api";
+import conditions from "./fake.api/conditions.api";
 import reviews from "./fake.api/reviews.api";
 const API = {
     rooms,
-    professions,
+    conditions,
     reviews
 };
 export default API;

@@ -6,7 +6,7 @@ import {
     getCurrentMonthClass,
     getHeaderClass,
     getWeekendClass
-} from "../../../../utils/calendar";
+} from "../../../utils/calendar";
 
 const Grid = ({ startDay, today }) => {
     const totalDays = 42;

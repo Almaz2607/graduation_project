@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Calendar from "./calendar/calendar";
+import Calendar from "./calendar";
 
 const SelectionBlock = () => {
     const [showCalendar, setShowCalendar] = useState(false);
@@ -14,9 +14,9 @@ const SelectionBlock = () => {
             <div className="selection__container _container">
                 <div className="selection__body">
                     <div className="selection__column">
-                        <Link to="/calendar" className="selection__button">
+                        <button className="selection__button">
                             Дата заезда
-                        </Link>
+                        </button>
                         <div className="selection__text">03.08</div>
                     </div>
                     <div className="selection__column">
@@ -27,10 +27,6 @@ const SelectionBlock = () => {
                             Дата выезда
                         </button>
                         <div className="selection__text">15.08</div>
-                    </div>
-                    <div className="selection__column">
-                        <button className="selection__button">Номер</button>
-                        <div className="selection__text">Люкс</div>
                     </div>
                     <div className="selection__column">
                         <button className="selection__button">Гостей</button>

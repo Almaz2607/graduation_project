@@ -1,18 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { getReviewClass } from "../../utils/reviews";
 
 const GuestReview = ({ path, text, name, surname, date }) => {
-    const getReviewClass = (path) => {
-        const initClass = "review-block";
-        if (path === "") {
-            return `food__review  ${initClass}`;
-        } else if (path === "about") {
-            return `reviews__item  ${initClass}`;
-        } else if (path === "rooms") {
-            return `room-reviews__item  ${initClass}`;
-        }
-    };
-
     return (
         <div className={getReviewClass(path)}>
             <p className="review-block__text">{text}</p>

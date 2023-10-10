@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import SelectionBlock from "../common/selectionRoom/selectionBlock";
+import SelectionBlock from "../common/selectionBlock";
 import GuestReview from "../common/guestReview";
 import Loader from "../common/loader";
 import useReviews from "../../hooks/useReviews";
