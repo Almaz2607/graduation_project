@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import SelectField from "../../common/form/selectField";
 
-const SelectionRooms = ({ onSelectedClass, onSelectedPrice }) => {
+const SelectionRooms = ({ onSelectedClass, onSortPrice }) => {
     const roomClasses = [
         { value: "standard", name: "Стандарт" },
         { value: "suite", name: "Полулюкс" },
@@ -15,7 +15,7 @@ const SelectionRooms = ({ onSelectedClass, onSelectedPrice }) => {
     ];
     const [data, setData] = useState({
         roomClass: "",
-        roomPrice: ""
+        sortMethod: ""
     });
 
     useEffect(() => {
@@ -23,8 +23,8 @@ const SelectionRooms = ({ onSelectedClass, onSelectedPrice }) => {
     }, [data.roomClass]);
 
     useEffect(() => {
-        onSelectedPrice(data.roomPrice);
-    }, [data.roomPrice]);
+        onSortPrice(data.sortMethod);
+    }, [data.sortMethod]);
 
     const hanldeChange = (target) => {
         setData((prevState) => ({
@@ -55,9 +55,9 @@ const SelectionRooms = ({ onSelectedClass, onSelectedPrice }) => {
                     <div className="available-rooms__field">
                         <SelectField
                             label=""
-                            name="roomPrice"
+                            name="sortMethod"
                             onChange={hanldeChange}
-                            value={data.roomPrice}
+                            value={data.sortMethod}
                             defaultOption="Выберите по цене"
                             options={roomPrices}
                         />
@@ -69,7 +69,7 @@ const SelectionRooms = ({ onSelectedClass, onSelectedPrice }) => {
 };
 SelectionRooms.propTypes = {
     onSelectedClass: PropTypes.func.isRequired,
-    onSelectedPrice: PropTypes.func.isRequired
+    onSortPrice: PropTypes.func.isRequired
 };
 
 export default SelectionRooms;
