@@ -244,6 +244,13 @@ body {
 .page {
     flex: 1 1 auto;
 }
+/* ----PAGE-NOT-FOUND--------------------------- */
+.not-found {
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 /* ----PAGE-HOME---------------------------------- */
 .home__image {
     width: 100%;
@@ -793,12 +800,21 @@ div > .card {
     background-color: #4e54ce;
 }
 /* ----PAGE-ROOM--------------------------------- */
+.room {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+/* ----ROOM-ABOUT-------------------------------- */
 .room-about {
     display: flex;
     justify-content: space-between;
-    margin-top: 30px;
+    margin: 40px 0;
 }
-/* ----ROOM-ABOUT-------------------------------- */
+.room-about__column_left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 .room-about__item1 {
     width: 360px;
     height: 230px;
@@ -813,11 +829,11 @@ div > .card {
 }
 .room-about__header {
     max-width: 390px;
-    margin: 0 0 20px 50px;
+    margin: 0 0 40px 50px;
 }
 .room-about__item3 {
     width: 480px;
-    height: 320px;
+    height: 300px;
     background-color: rgb(95, 201, 209);
     margin-right: 20px;
 }
@@ -853,7 +869,7 @@ div > .card {
 /* ----ROOM-PRICE-------------------------------- */
 .room-price {
     padding: 0px 10px;
-    margin-top: 30px;
+    margin-bottom: 40px;
 }
 .room-price__title {
     margin: 0 0 15px 70px;
@@ -872,7 +888,7 @@ div > .card {
 .room-price__circle {
     margin-bottom: 7px;
 }
-.room-price__info-block {
+.room-price__booking-block {
     display: flex;
     flex-direction: column;
 }
@@ -925,7 +941,7 @@ div > .card {
 /* ----ROOM-REVIEWS-------------------------------- */
 .room-reviews {
     padding: 0px 10px;
-    margin: 20px 0 30px 0;
+    margin-bottom: 30px;
 }
 .room-reviews__title {
     margin: 0 0 15px 70px;

@@ -22,11 +22,11 @@ const GuestReview = ({ path, text, name, surname, date }) => {
 };
 
 GuestReview.propTypes = {
-    path: PropTypes.string,
-    text: PropTypes.string,
-    name: PropTypes.string,
-    surname: PropTypes.string,
-    date: PropTypes.string
+    path: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    surname: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired
 };
 
 export default GuestReview;

@@ -33,7 +33,7 @@ const SelectionBlock = () => {
                         <div className="selection__text">2 Гостей</div>
                     </div>
                     <div className="selection__column-total">
-                        <Link to="/available" className="selection__link-total">
+                        <Link to="/selection" className="selection__link-total">
                             Подобрать номер
                         </Link>
                     </div>

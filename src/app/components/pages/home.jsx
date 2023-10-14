@@ -86,11 +86,11 @@ function Home() {
                                 </div>
                             </div>
                         </div>
-                        <div className="comfort__link link-block">
+                        {/* <div className="comfort__link link-block">
                             <Link to="/rooms" className="link-block___value">
                                 Посмотреть все номера
                             </Link>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </section>

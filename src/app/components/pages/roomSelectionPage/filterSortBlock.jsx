@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import SelectField from "../../common/form/selectField";
 
-const SelectionRooms = ({ onSelectedClass, onSortPrice }) => {
+const FilterSortBlock = ({ onSelectedClass, onSortPrice }) => {
     const roomClasses = [
         { value: "standard", name: "Стандарт" },
         { value: "suite", name: "Полулюкс" },
@@ -67,9 +67,9 @@ const SelectionRooms = ({ onSelectedClass, onSortPrice }) => {
         </div>
     );
 };
-SelectionRooms.propTypes = {
+FilterSortBlock.propTypes = {
     onSelectedClass: PropTypes.func.isRequired,
     onSortPrice: PropTypes.func.isRequired
 };
 
-export default SelectionRooms;
+export default FilterSortBlock;

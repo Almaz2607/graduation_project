@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
-import PropTypes from "prop-types";
 import RoomsStatus from "./roomsStatus";
 import api from "../../../../api";
 import ShowRooms from "./showRooms";
 import { useParams } from "react-router-dom";
 import Loader from "../../common/loader";
 
-const Administrator = () => {
+const Admin = () => {
     const [rooms, setRooms] = useState([]);
     const params = useParams();
     const { status } = params;
@@ -48,8 +47,4 @@ const Administrator = () => {
     );
 };
 
-Administrator.propTypes = {
-    match: PropTypes.object
-};
-
-export default Administrator;
+export default Admin;

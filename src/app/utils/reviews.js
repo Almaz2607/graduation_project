@@ -4,7 +4,7 @@ export const getReviewClass = (path) => {
         return `food__review  ${initClass}`;
     } else if (path === "about") {
         return `reviews__item  ${initClass}`;
-    } else if (path === "rooms") {
+    } else if (path === "selection") {
         return `room-reviews__item  ${initClass}`;
     }
 };

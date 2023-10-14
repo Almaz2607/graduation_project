@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import Loader from "../../common/loader";
 import SelectionBlock from "../../common/selectionBlock";
 import RoomConditions from "./roomConditions";
@@ -149,10 +148,6 @@ const Rooms = () => {
             </div>
         </div>
     );
-};
-
-Rooms.propTypes = {
-    match: PropTypes.object
 };
 
 export default Rooms;

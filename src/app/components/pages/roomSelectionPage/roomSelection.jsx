@@ -1,29 +1,30 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
+import { useHistory } from "react-router-dom";
 import _ from "lodash";
 import RoomItem from "./roomItem";
-import Loader from "../../common/loader";
 import Pagination from "../../common/pagination";
 import { paginate } from "../../../utils/paginate";
-import SelectionRooms from "./selectionRooms";
-import useRooms from "../../../hooks/useRooms";
+import FilterSortBlock from "./filterSortBlock";
 
-const AvailableRooms = () => {
+const RoomSelection = ({ rooms }) => {
+    const history = useHistory();
     const [currentPage, setCurrentPage] = useState(1);
     const [selectedClass, setSelectedClass] = useState();
     const [sortBy, setSortBy] = useState({ iter: "", order: "" });
-    const { rooms } = useRooms();
+
     const pageSize = 4;
 
     const handlePageChange = (pageIndex) => {
         setCurrentPage(pageIndex);
     };
 
-    const handleRoomIdSelect = (id) => {
-        console.log(id);
-    };
-
     const handleSelectedClass = (roomClass) => {
         setSelectedClass(roomClass);
+    };
+
+    const handleRoomIdSelect = (id) => {
+        history.push(`/selection/${id} `);
     };
 
     const handleSortPrice = (method) => {
@@ -33,8 +34,6 @@ const AvailableRooms = () => {
             ? setSortBy({ iter: "price", order: "asc" })
             : setSortBy({ iter: "price", order: "desc" });
     };
-
-    if (rooms.length === 0) return <Loader />;
 
     const filteredRooms =
         selectedClass && selectedClass !== "allways"
@@ -48,7 +47,7 @@ const AvailableRooms = () => {
     return (
         <div className="available-rooms">
             <div className="_container">
-                <SelectionRooms
+                <FilterSortBlock
                     onSelectedClass={handleSelectedClass}
                     onSortPrice={handleSortPrice}
                 />
@@ -56,7 +55,7 @@ const AvailableRooms = () => {
                     <RoomItem
                         key={room._id}
                         id={room._id}
-                        roomClass={room.roomClass}
+                        roomClass={room.blockTitle}
                         numberOfGuests={room.numberOfGuests}
                         price={room.price}
                         onSelectedItem={handleRoomIdSelect}
@@ -73,4 +72,8 @@ const AvailableRooms = () => {
     );
 };
 
-export default AvailableRooms;
+RoomSelection.propTypes = {
+    rooms: PropTypes.array
+};
+
+export default RoomSelection;
