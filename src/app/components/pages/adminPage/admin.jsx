@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import RoomsStatus from "./roomsStatus";
-import api from "../../../../api";
+import api from "../../../api";
 import ShowRooms from "./showRooms";
 import { useParams } from "react-router-dom";
 import Loader from "../../common/loader";

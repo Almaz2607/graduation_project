@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { validator } from "../../utils/validator";
 import TextField from "../common/form/textField";
-import api from "../../../api";
+import api from "../../api";
 import SelectField from "../common/form/selectField";
 import MultiSelectField from "../common/form/multiSelectField";
 import CheckBoxField from "../common/form/checkBoxField";
@@ -97,7 +97,7 @@ const RegisterForm = () => {
             />
             <SelectField
                 label="Выберите вашу профессию"
-                name="profession"
+                name="professions"
                 value={data.profession}
                 onChange={handleChange}
                 defaultOption="Choose..."

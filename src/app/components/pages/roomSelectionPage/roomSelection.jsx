@@ -7,7 +7,7 @@ import Pagination from "../../common/pagination";
 import { paginate } from "../../../utils/paginate";
 import FilterSortBlock from "./filterSortBlock";
 
-const RoomSelection = ({ rooms }) => {
+const RoomsList = ({ rooms }) => {
     const history = useHistory();
     const [currentPage, setCurrentPage] = useState(1);
     const [selectedClass, setSelectedClass] = useState();
@@ -72,8 +72,8 @@ const RoomSelection = ({ rooms }) => {
     );
 };
 
-RoomSelection.propTypes = {
+RoomsList.propTypes = {
     rooms: PropTypes.array
 };
 
-export default RoomSelection;
+export default RoomsList;

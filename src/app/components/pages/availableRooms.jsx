@@ -2,11 +2,16 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import useRooms from "../../hooks/useRooms";
 import useReviews from "../../hooks/useReviews";
-import RoomSelection from "./roomSelectionPage";
+import RoomsList from "./roomSelectionPage";
 import RoomDetails from "./roomDetailsPage";
 import Loader from "../common/loader";
+// import RoomProvider from "../../hooks/useRoom";
+import { useUser } from "../../hooks/useUsers";
 
 const AvailableRooms = () => {
+    // const {rooms} =useRoom()
+    const { users } = useUser();
+    console.log(users);
     const { rooms } = useRooms();
     const { reviews, pathName } = useReviews();
 
@@ -28,7 +33,7 @@ const AvailableRooms = () => {
                     path={path}
                 />
             ) : (
-                <RoomSelection rooms={rooms} />
+                <RoomsList rooms={rooms} />
             )}
         </>
     );
