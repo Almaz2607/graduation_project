@@ -1,20 +1,40 @@
-// const professions = {
-//     doctor: { _id: "67rdca3eeb7f6fgeed471818", name: "Доктор" },
-//     waiter: { _id: "67rdca3eeb7f6fgeed471820", name: "Официант" },
-//     physics: { _id: "67rdca3eeb7f6fgeed471814", name: "Физик" },
-//     engineer: { _id: "67rdca3eeb7f6fgeed471822", name: "Инженер" },
-//     actor: { _id: "67rdca3eeb7f6fgeed471824", name: "Актер" },
-//     cook: { _id: "67rdca3eeb7f6fgeed471829", name: "Повар" }
-// }
-// const qualities = {
-//     tedious: { _id: "67rdca3eeb7f6fgeed471198", name: "Нудила", color: "primary" },
-//     strange: { _id: "67rdca3eeb7f6fgeed471100", name: "Странный", color: "secondary" },
-//     buller: { _id: "67rdca3eeb7f6fgeed4711012", name: "Троль", color: "success" },
-//     alcoholic: { _id: "67rdca3eeb7f6fgeed471101", name: "Алкоголик", color: "danger" },
-//     handsome: { _id: "67rdca3eeb7f6fgeed471102", name: "Красавчик", color: "info" },
-//     uncertain: { _id: "67rdca3eeb7f6fgeed471103", name: "Неуверенный", color: "dark" },
-
-// }
+// const roomClass = {
+//     standard2: {
+//         _id: "67rdca3eeb7f6class771811",
+//         name: "Стандарт",
+//         title: "Номер стандарт",
+//         numberOfGuests: 2,
+//         price: 35
+//     },
+//     standard3: {
+//         _id: "67rdca3eeb7f6class771822",
+//         name: "Стандарт",
+//         title: "Номер стандарт",
+//         numberOfGuests: 3,
+//         price: 45
+//     },
+//     suite2: {
+//         _id: "67rdca3eeb7f6class771833",
+//         name: "Полулюкс",
+//         title: "Просторный номер",
+//         numberOfGuests: 2,
+//         price: 55
+//     },
+//     suite3: {
+//         _id: "67rdca3eeb7f6class771844",
+//         name: "Полулюкс",
+//         title: "Просторный номер",
+//         numberOfGuests: 3,
+//         price: 65
+//     },
+//     senior: {
+//         _id: "67rdca3eeb7f6class7718255",
+//         name: "Люкс",
+//         title: "Большой люкс",
+//         numberOfGuests: 2,
+//         price: 75
+//     }
+// };
 
 const rooms = [
     {
@@ -26,9 +46,7 @@ const rooms = [
         numberOfGuests: 2,
         price: 35,
         available: false,
-        type: "",
-        arrivalDate: "",
-        departureDate: ""
+        type: ""
     },
     {
         _id: "67rdca3eeb7f6fgeed471806",
@@ -39,9 +57,7 @@ const rooms = [
         numberOfGuests: 3,
         price: 45,
         available: false,
-        type: "",
-        arrivalDate: "",
-        departureDate: ""
+        type: ""
     },
     {
         _id: "67rdca3eeb7f6fgeed471317",
@@ -52,9 +68,7 @@ const rooms = [
         numberOfGuests: 2,
         price: 35,
         available: true,
-        type: "",
-        arrivalDate: "",
-        departureDate: ""
+        type: ""
     },
     {
         _id: "67rdca3eeb7f6fgeed471018",
@@ -65,9 +79,7 @@ const rooms = [
         numberOfGuests: 3,
         price: 65,
         available: true,
-        type: "",
-        arrivalDate: "",
-        departureDate: ""
+        type: ""
     },
     {
         _id: "67rdca3eeb7f6fgeed471115",
@@ -78,9 +90,7 @@ const rooms = [
         numberOfGuests: 2,
         price: 35,
         available: true,
-        type: "",
-        arrivalDate: "",
-        departureDate: ""
+        type: ""
     },
     {
         _id: "67rdca3eeb7f6fgeed471080",
@@ -91,9 +101,7 @@ const rooms = [
         numberOfGuests: 3,
         price: 45,
         available: true,
-        type: "",
-        arrivalDate: "",
-        departureDate: ""
+        type: ""
     },
     {
         _id: "67rdca3eeb7f6fgeed471621",
@@ -104,9 +112,7 @@ const rooms = [
         numberOfGuests: 2,
         price: 35,
         available: true,
-        type: "",
-        arrivalDate: "",
-        departureDate: ""
+        type: ""
     },
     {
         _id: "67rdca3eeb7f6fgeed471102",
@@ -117,9 +123,7 @@ const rooms = [
         numberOfGuests: 3,
         price: 45,
         available: true,
-        type: "",
-        arrivalDate: "",
-        departureDate: ""
+        type: ""
     },
     {
         _id: "67rdca3eeb7f6fgeed471470",
@@ -130,9 +134,7 @@ const rooms = [
         numberOfGuests: 2,
         price: 35,
         available: true,
-        type: "",
-        arrivalDate: "",
-        departureDate: ""
+        type: ""
     },
     {
         _id: "67rdca3eeb7f6fgeed471824",
@@ -143,9 +145,7 @@ const rooms = [
         numberOfGuests: 2,
         price: 75,
         available: true,
-        type: "",
-        arrivalDate: "",
-        departureDate: ""
+        type: ""
     },
     {
         _id: "67rdca3eeb7f6fgeed47181f",
@@ -156,9 +156,7 @@ const rooms = [
         numberOfGuests: 2,
         price: 55,
         available: true,
-        type: "",
-        arrivalDate: "",
-        departureDate: ""
+        type: ""
     },
     {
         _id: "67rdca3eeb7f6fgeed47391r",
@@ -169,9 +167,7 @@ const rooms = [
         numberOfGuests: 2,
         price: 35,
         available: true,
-        type: "",
-        arrivalDate: "",
-        departureDate: ""
+        type: ""
     }
 ];
 

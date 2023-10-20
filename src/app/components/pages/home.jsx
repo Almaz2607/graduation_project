@@ -4,6 +4,7 @@ import SelectionBlock from "../common/selectionBlock";
 import Loader from "../common/loader";
 import GuestReview from "../common/guestReview";
 import useReviews from "../../hooks/useReviews";
+import ImageBlock from "../common/imageBlock";
 
 function Home() {
     const { reviews, pathName } = useReviews();
@@ -27,38 +28,22 @@ function Home() {
             <section className="home__comfort comfort">
                 <div className="comfort__container _container">
                     <div className="comfort__column_left">
-                        <div className="comfort__item_standard item-block">
-                            <div className="item-block__image">
-                                {/* <img src="" alt="standard" /> */}
-                                <div className="item-block__info info-block">
-                                    <p className="info-block__title">
-                                        Стандарт
-                                    </p>
-                                    <p className="info-block__text">
-                                        2 Гостя, завтрак включен
-                                    </p>
-                                </div>
-                                <div className="item-block__price price-block">
-                                    <p className="price-block__value">$ 35</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="comfort__item_suite item-block">
-                            <div className="item-block__image">
-                                {/* <img src="" alt="standard" /> */}
-                                <div className="item-block__info info-block">
-                                    <p className="info-block__title">
-                                        Полулюкс
-                                    </p>
-                                    <p className="info-block__text">
-                                        2 Гостя, завтрак включен
-                                    </p>
-                                </div>
-                                <div className="item-block__price price-block">
-                                    <p className="price-block__value">$ 55</p>
-                                </div>
-                            </div>
-                        </div>
+                        <ImageBlock
+                            name="comfort__item-standard"
+                            path="home/room1"
+                            alt="standard"
+                            title="Стандарт"
+                            text="2 Гостя, завтрак включен"
+                            price="35"
+                        />
+                        <ImageBlock
+                            name="comfort__item-suite"
+                            path="home/room2"
+                            alt="suiet"
+                            title="Полулюкс"
+                            text="2 Гостя, завтрак включен"
+                            price="55"
+                        />
                     </div>
                     <div className="comfort__column_right">
                         <div className="comfort__header header-block">
@@ -70,27 +55,14 @@ function Home() {
                                 комфортабельные номера.
                             </p>
                         </div>
-                        <div className="comfort__item_senior item-block">
-                            <div className="item-block__image">
-                                {/* <img src="" alt="standard" /> */}
-                                <div className="item-block__info info-block">
-                                    <p className="info-block__title">
-                                        Большой люкс
-                                    </p>
-                                    <p className="info-block__text">
-                                        2 Гостя, завтрак включен
-                                    </p>
-                                </div>
-                                <div className="item-block__price price-block">
-                                    <p className="price-block__value">$ 75</p>
-                                </div>
-                            </div>
-                        </div>
-                        {/* <div className="comfort__link link-block">
-                            <Link to="/rooms" className="link-block___value">
-                                Посмотреть все номера
-                            </Link>
-                        </div> */}
+                        <ImageBlock
+                            name="comfort__item-senior"
+                            path="home/room3"
+                            alt="senior"
+                            title="Люкс"
+                            text="2 Гостя, завтрак включен"
+                            price="75"
+                        />
                     </div>
                 </div>
             </section>
@@ -146,17 +118,14 @@ function Home() {
             <section className="home__activities activities">
                 <div className="activities__container _container">
                     <div className="activities__column_left">
-                        <div className="activities__item_1 item-block">
-                            <div className="item-block__image">
-                                {/* <img src="" alt="standard" /> */}
-                                <div className="item-block__info info-block">
-                                    <p className="info-block__title">Бассейн</p>
-                                    <p className="info-block__text">
-                                        25 метров на открытом воздухе
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                        <ImageBlock
+                            name="activities__item-1"
+                            path="home/pool"
+                            alt="pool"
+                            title="Бассейн"
+                            text="25 метров на открытом воздухе"
+                            price=""
+                        />
                         <div className="activities__item_2 item-block">
                             <div className="item-block__image">
                                 {/* <img src="" alt="standard" /> */}

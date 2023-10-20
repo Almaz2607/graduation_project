@@ -6,12 +6,9 @@ import RoomsList from "./roomSelectionPage";
 import RoomDetails from "./roomDetailsPage";
 import Loader from "../common/loader";
 // import RoomProvider from "../../hooks/useRoom";
-import { useUser } from "../../hooks/useUsers";
 
 const AvailableRooms = () => {
     // const {rooms} =useRoom()
-    const { users } = useUser();
-    console.log(users);
     const { rooms } = useRooms();
     const { reviews, pathName } = useReviews();
 

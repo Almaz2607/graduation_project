@@ -4,6 +4,7 @@ import SelectionBlock from "../common/selectionBlock";
 import GuestReview from "../common/guestReview";
 import Loader from "../common/loader";
 import useReviews from "../../hooks/useReviews";
+import ImageBlock from "../common/imageBlock";
 
 const About = () => {
     const { reviews, pathName } = useReviews();
@@ -18,19 +19,14 @@ const About = () => {
             <div className="about__description description">
                 <div className="description__container _container">
                     <div className="description__column_left">
-                        <div className="description__item_rooms item-block">
-                            <div className="item-block__image">
-                                {/* <img src="" alt="standard" /> */}
-                                <div className="item-block__info info-block">
-                                    <p className="info-block__title">
-                                        Комфортные номера
-                                    </p>
-                                    <p className="info-block__text">
-                                        20 номеров с видом на озеро
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                        <ImageBlock
+                            name="description__item-rooms"
+                            path="about/room"
+                            alt="room"
+                            title="Комфортные номера"
+                            text="Номера с видом на озеро"
+                            price=""
+                        />
                         <div className="description__item_gym item-block">
                             <div className="item-block__image">
                                 {/* <img src="" alt="standard" /> */}
@@ -44,17 +40,14 @@ const About = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="description__item_pool item-block">
-                            <div className="item-block__image">
-                                {/* <img src="" alt="standard" /> */}
-                                <div className="item-block__info info-block">
-                                    <p className="info-block__title">Бассейн</p>
-                                    <p className="info-block__text">
-                                        25 метров на открытом воздухе
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                        <ImageBlock
+                            name="description__item-pool"
+                            path="about/pool"
+                            alt="pool"
+                            title="Бассейн"
+                            text="25 метров на открытом воздухе"
+                            price=""
+                        />
                     </div>
                     <div className="description__column_right">
                         <div className="description__header header-block">

@@ -3,6 +3,7 @@ import Loader from "../../common/loader";
 import SelectionBlock from "../../common/selectionBlock";
 import RoomConditions from "./roomConditions";
 import useConditions from "../../../hooks/useConditions";
+import ImageBlock from "../../common/imageBlock";
 
 const Rooms = () => {
     const { conditions } = useConditions();
@@ -13,40 +14,24 @@ const Rooms = () => {
         <div className="rooms">
             <SelectionBlock />
             <div className="rooms__container _container">
-                <section className="rooms__block1">
+                <div className="rooms__block1">
                     <div className="rooms__block1-column-left">
-                        <div className="rooms__block1-item-standard2 item-block">
-                            <div className="item-block__image">
-                                {/* <img src="" alt="standard2" /> */}
-                                <div className="item-block__info info-block">
-                                    <p className="info-block__title">
-                                        Стандарт
-                                    </p>
-                                    <p className="info-block__text">
-                                        2 Гостя, завтрак включен
-                                    </p>
-                                </div>
-                                <div className="item-block__price price-block">
-                                    <p className="price-block__value">$ 35</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="rooms__block1-item-suite2 item-block">
-                            <div className="item-block__image">
-                                {/* <img src="" alt="suite2" /> */}
-                                <div className="item-block__info info-block">
-                                    <p className="info-block__title">
-                                        Полулюкс
-                                    </p>
-                                    <p className="info-block__text">
-                                        2 Гостя, завтрак включен
-                                    </p>
-                                </div>
-                                <div className="item-block__price price-block">
-                                    <p className="price-block__value">$ 55</p>
-                                </div>
-                            </div>
-                        </div>
+                        <ImageBlock
+                            name="rooms__block1-standard2"
+                            path="rooms/room1"
+                            alt="standard"
+                            title="Стандарт"
+                            text="2 гостя, завтрак включен"
+                            price="35"
+                        />
+                        <ImageBlock
+                            name="rooms__block1-suite2"
+                            path="rooms/room2"
+                            alt="suite"
+                            title="Полулюкс"
+                            text="2 гостя, завтрак включен"
+                            price="55"
+                        />
                     </div>
                     <div className="rooms__block1-column-right">
                         <div className="rooms__block1-header header-block">
@@ -60,79 +45,47 @@ const Rooms = () => {
                                 комфортабельные номера.
                             </p>
                         </div>
-                        <div className="rooms__block1-item-senior2 item-block">
-                            <div className="item-block__image">
-                                {/* <img src="" alt="senior2" /> */}
-                                <div className="item-block__info info-block">
-                                    <p className="info-block__title">
-                                        Большой люкс
-                                    </p>
-                                    <p className="info-block__text">
-                                        2 Гостя, завтрак включен
-                                    </p>
-                                </div>
-                                <div className="item-block__price price-block">
-                                    <p className="price-block__value">$ 75</p>
-                                </div>
-                            </div>
-                        </div>
+                        <ImageBlock
+                            name="rooms__block1-senior2"
+                            path="rooms/room3"
+                            alt="senior"
+                            title="Большой люкс"
+                            text="2 гостя, завтрак включен"
+                            price="75"
+                        />
                     </div>
-                </section>
-                <section className="rooms__block2">
+                </div>
+                <div className="rooms__block2">
                     <div className="rooms__block2-column-left">
-                        <div className="rooms__item-senior3 item-block">
-                            <div className="item-block__image">
-                                {/* <img src="" alt="senior2" /> */}
-                                <div className="item-block__info info-block">
-                                    <p className="info-block__title">
-                                        Люкс с видом
-                                    </p>
-                                    <p className="info-block__text">
-                                        2 гостя, завтрак включен
-                                    </p>
-                                </div>
-                                <div className="item-block__price price-block">
-                                    <p className="price-block__value">$ 75</p>
-                                </div>
-                            </div>
-                        </div>
+                        <ImageBlock
+                            name="rooms__item-senior3"
+                            path="rooms/room4"
+                            alt="senior"
+                            title="Люкс с видом"
+                            text="3 гостя, завтрак включен"
+                            price="75"
+                        />
                     </div>
                     <div className="rooms__block2-column-right">
-                        <div className="rooms__item-standard3 item-block">
-                            <div className="item-block__image">
-                                {/* <img src="" alt="standard3" /> */}
-                                <div className="item-block__info info-block">
-                                    <p className="info-block__title">
-                                        Стандарт
-                                    </p>
-                                    <p className="info-block__text">
-                                        3 Гостя, завтрак включен
-                                    </p>
-                                </div>
-                                <div className="item-block__price price-block">
-                                    <p className="price-block__value">$ 55</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="rooms__item-suite3 item-block">
-                            <div className="item-block__image">
-                                {/* <img src="" alt="suite3" /> */}
-                                <div className="item-block__info info-block">
-                                    <p className="info-block__title">
-                                        Полулюкс
-                                    </p>
-                                    <p className="info-block__text">
-                                        3 Гостя, завтрак включен
-                                    </p>
-                                </div>
-                                <div className="item-block__price price-block">
-                                    <p className="price-block__value">$ 75</p>
-                                </div>
-                            </div>
-                        </div>
+                        <ImageBlock
+                            name="rooms__item-standard3"
+                            path="rooms/room5"
+                            alt="standard"
+                            title="Стандарт"
+                            text="3 гостя, завтрак включен"
+                            price="55"
+                        />
+                        <ImageBlock
+                            name="rooms__item-suite3"
+                            path="rooms/room6"
+                            alt="suite"
+                            title="Полулюкс"
+                            text="3 гостя, завтрак включен"
+                            price="75"
+                        />
                     </div>
-                </section>
-                <section className="rooms__conditions">
+                </div>
+                <div className="rooms__conditions">
                     <p className="rooms__conditions-title">
                         Условия проживания и что есть в номерах
                     </p>
@@ -144,7 +97,7 @@ const Rooms = () => {
                             />
                         ))}
                     </div>
-                </section>
+                </div>
             </div>
         </div>
     );

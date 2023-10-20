@@ -8,7 +8,6 @@ import BackHistoryButton from "../../common/backButton";
 const RoomDetails = ({ roomId, rooms, reviews, path }) => {
     const id = roomId.slice(0, 24);
     const room = rooms.find((item) => item._id === id);
-
     const cropReviews = reviews.slice(0, 4);
 
     return (
