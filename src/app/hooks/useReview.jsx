@@ -1,22 +1,20 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import userService from "../services/user.service";
 import { toast } from "react-toastify";
+import reviewService from "../services/reviews.service";
 import Loader from "../components/common/loader";
 
-const UserContext = React.createContext();
+const ReviewContext = React.createContext();
 
-export const useUser = () => {
-    return useContext(UserContext);
-};
+export const useReview = () => useContext(ReviewContext);
 
-const UserProvider = ({ children }) => {
-    const [users, setUsers] = useState([]);
+const ReviewProvider = ({ children }) => {
+    const [reviews, setReviews] = useState([]);
     const [isLoading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        getUsers();
+        getReviews();
     }, []);
 
     useEffect(() => {
@@ -26,31 +24,34 @@ const UserProvider = ({ children }) => {
         }
     }, [error]);
 
-    async function getUsers() {
+    const getReviews = async () => {
         try {
-            const { content } = await userService.get();
-            setUsers(content);
+            const { content } = await reviewService.get();
+            setReviews(content);
             setLoading(false);
         } catch (error) {
             errorCatcher(error);
         }
-    }
+    };
+
     function errorCatcher(error) {
-        const { message } = error.response.data;
+        const message = error.response.data;
         setError(message);
+        setLoading(false);
     }
+
     return (
-        <UserContext.Provider value={{ users }}>
+        <ReviewContext.Provider value={{ reviews }}>
             {!isLoading ? children : <Loader />}
-        </UserContext.Provider>
+        </ReviewContext.Provider>
     );
 };
 
-UserProvider.propTypes = {
+ReviewProvider.propTypes = {
     children: PropTypes.oneOfType([
         PropTypes.arrayOf(PropTypes.node),
         PropTypes.node
     ])
 };
 
-export default UserProvider;
+export default ReviewProvider;

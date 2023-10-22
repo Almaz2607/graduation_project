@@ -11,6 +11,7 @@ import Admin from "../components/pages/adminPage/admin";
 import NotFound from "../components/pages/notFound";
 import AvailableRooms from "../components/pages/availableRooms";
 import { ToastContainer } from "react-toastify";
+import RoomProvider from "../hooks/useRoom";
 
 const Page = () => {
     return (
@@ -18,9 +19,14 @@ const Page = () => {
             <Switch>
                 <Route path="/" exact component={Home} />
                 <Route path="/about" component={About} />
-                <Route path="/attractions" component={Attractions} />
-                <Route path="/selection/:roomId?" component={AvailableRooms} />
+                <RoomProvider>
+                    <Route
+                        path="/selection/:roomId?"
+                        component={AvailableRooms}
+                    />
+                </RoomProvider>
                 <Route path="/rooms" component={Rooms} />
+                <Route path="/attractions" component={Attractions} />
                 <Route path="/login/:type?" component={Login} />
                 <Route path="/admin/:status?" component={Admin} />
                 <Route path="/booking" component={Payment} />

@@ -1,0 +1,134 @@
+[
+    {
+        "_id": "67rdca3eeb7f6fgeed471855",
+        "number": 1,
+        "class": "standard",
+        "blockTitle": "Стандарт",
+        "title": "Номер стандарт",
+        "numberOfGuests": 2,
+        "price": 35,
+        "available": false,
+        "type": ""
+    },
+    {
+        "_id": "67rdca3eeb7f6fgeed471806",
+        "number": 2,
+        "class": "standard",
+        "blockTitle": "Стандарт",
+        "title": "Номер стандарт",
+        "numberOfGuests": 3,
+        "price": 45,
+        "available": false,
+        "type": ""
+    },
+    {
+        "_id": "67rdca3eeb7f6fgeed471317",
+        "number": 3,
+        "class": "standard",
+        "blockTitle": "Стандарт",
+        "title": "Номер стандарт",
+        "numberOfGuests": 2,
+        "price": 35,
+        "available": true,
+        "type": ""
+    },
+    {
+        "_id": "67rdca3eeb7f6fgeed471018",
+        "number": 4,
+        "class": "suite",
+        "blockTitle": "Полулюкс",
+        "title": "Просторный номер",
+        "numberOfGuests": 3,
+        "price": 65,
+        "available": true,
+        "type": ""
+    },
+    {
+        "_id": "67rdca3eeb7f6fgeed471115",
+        "number": 5,
+        "class": "standard",
+        "blockTitle": "Стандарт",
+        "title": "Номер стандарт",
+        "numberOfGuests": 2,
+        "price": 35,
+        "available": true,
+        "type": ""
+    },
+    {
+        "_id": "67rdca3eeb7f6fgeed471080",
+        "number": 6,
+        "class": "standard",
+        "blockTitle": "Стандарт",
+        "title": "Номер стандарт",
+        "numberOfGuests": 3,
+        "price": 45,
+        "available": true,
+        "type": ""
+    },
+    {
+        "_id": "67rdca3eeb7f6fgeed471621",
+        "number": 7,
+        "class": "standard",
+        "blockTitle": "Стандарт",
+        "title": "Номер стандарт",
+        "numberOfGuests": 2,
+        "price": 35,
+        "available": true,
+        "type": ""
+    },
+    {
+        "_id": "67rdca3eeb7f6fgeed471102",
+        "number": 8,
+        "class": "standard",
+        "blockTitle": "Стандарт",
+        "title": "Номер стандарт",
+        "numberOfGuests": 3,
+        "price": 45,
+        "available": true,
+        "type": ""
+    },
+    {
+        "_id": "67rdca3eeb7f6fgeed471470",
+        "number": 9,
+        "class": "standard",
+        "blockTitle": "Стандарт",
+        "title": "Номер стандарт",
+        "numberOfGuests": 2,
+        "price": 35,
+        "available": true,
+        "type": ""
+    },
+    {
+        "_id": "67rdca3eeb7f6fgeed471824",
+        "number": 10,
+        "class": "senior",
+        "blockTitle": "Люкс",
+        "title": "Большой люкс",
+        "numberOfGuests": 2,
+        "price": 75,
+        "available": true,
+        "type": ""
+    },
+    {
+        "_id": "67rdca3eeb7f6fgeed47181f",
+        "number": 11,
+        "class": "suite",
+        "blockTitle": "Полулюкс",
+        "title": "Просторный номер",
+        "numberOfGuests": 2,
+        "price": 55,
+        "available": true,
+        "type": ""
+    },
+    {
+        "_id": "67rdca3eeb7f6fgeed47391r",
+        "number": 12,
+        "class": "standard",
+        "blockTitle": "Стандарт",
+        "title": "Номер стандарт",
+        "numberOfGuests": 2,
+        "price": 35,
+        "available": true,
+        "type": ""
+    }
+]

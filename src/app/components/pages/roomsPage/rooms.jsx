@@ -1,14 +1,29 @@
 import React from "react";
-import Loader from "../../common/loader";
 import SelectionBlock from "../../common/selectionBlock";
 import RoomConditions from "./roomConditions";
-import useConditions from "../../../hooks/useConditions";
 import ImageBlock from "../../common/imageBlock";
 
 const Rooms = () => {
-    const { conditions } = useConditions();
-
-    if (conditions.length === 0) return <Loader />;
+    const conditions = [
+        {
+            _id: "67rdca3eeb7f6fgeed471818",
+            text: ` Расположение комфортное, рядом магазины,
+        транспорт, горы, озеро. Быть готовым к тому, что
+        в номере тонкие стены и шумные соседи.`
+        },
+        {
+            _id: "67rdca3eeb7f6fgeed471599",
+            text: ` Расположение комфортное, рядом магазины,
+        транспорт, горы, озеро. Быть готовым к тому, что
+        в номере тонкие стены и шумные соседи.`
+        },
+        {
+            _id: "67rdca3eeb7f6fgeed471035",
+            text: ` Расположение комфортное, рядом магазины,
+        транспорт, горы, озеро. Быть готовым к тому, что
+        в номере тонкие стены и шумные соседи.`
+        }
+    ];
 
     return (
         <div className="rooms">
