@@ -1,22 +1,21 @@
 import React, { useEffect, useState } from "react";
 import { validator } from "../../utils/validator";
 import TextField from "../common/form/textField";
-import api from "../../api";
-import SelectField from "../common/form/selectField";
-import MultiSelectField from "../common/form/multiSelectField";
 import CheckBoxField from "../common/form/checkBoxField";
+import { useAuth } from "../../hooks/useAuth";
+import { useHistory } from "react-router-dom";
 
 const RegisterForm = () => {
+    const history = useHistory();
     const [data, setData] = useState({
+        name: "",
+        surname: "",
         email: "",
         password: "",
-        profession: "",
-        qualities: [],
         licence: false
     });
     const [errors, setErrors] = useState({});
-    const [qualities, setQualities] = useState({});
-    const [professions, setProfessions] = useState([]);
+    const { signUp } = useAuth();
 
     const handleChange = (target) => {
         setData((prevState) => ({
@@ -25,12 +24,13 @@ const RegisterForm = () => {
         }));
     };
 
-    useEffect(() => {
-        api.professions.fetchAll().then((data) => setProfessions(data));
-        api.qualities.fetchAll().then((data) => setQualities(data));
-    }, []);
-
     const validatorConfig = {
+        name: {
+            isRequired: { message: "Поле Имя обязательно для заполнения" }
+        },
+        surname: {
+            isRequired: { message: "Поле Фамилия обязательно для заполнения" }
+        },
         email: {
             isRequired: { message: "Поле email обязательно для заполнения" },
             isEmail: { message: "Email введен некорректно" }
@@ -47,9 +47,6 @@ const RegisterForm = () => {
                 message: "Пароль должен состоять минимум из 8 символов",
                 value: 8
             }
-        },
-        profession: {
-            isRequired: { message: "Обязательно выберите вашу профессию" }
         },
         licence: {
             isRequired: {
@@ -71,15 +68,35 @@ const RegisterForm = () => {
 
     const isValid = Object.keys(errors).length === 0;
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         const isValid = validate();
         if (!isValid) return;
-        console.log(data);
+
+        try {
+            await signUp(data);
+            history.push("/");
+        } catch (error) {
+            setErrors(error);
+        }
     };
 
     return (
         <form onSubmit={handleSubmit}>
+            <TextField
+                label="Имя"
+                name="name"
+                value={data.name}
+                onChange={handleChange}
+                error={errors.name}
+            />
+            <TextField
+                label="Фамилия"
+                name="surname"
+                value={data.surname}
+                onChange={handleChange}
+                error={errors.surname}
+            />
             <TextField
                 label="Электронная почта"
                 name="email"
@@ -94,22 +111,6 @@ const RegisterForm = () => {
                 value={data.password}
                 onChange={handleChange}
                 error={errors.password}
-            />
-            <SelectField
-                label="Выберите вашу профессию"
-                name="professions"
-                value={data.profession}
-                onChange={handleChange}
-                defaultOption="Choose..."
-                options={professions}
-                error={errors.profession}
-            />
-            <MultiSelectField
-                label="Выберите ваши качества"
-                options={qualities}
-                onChange={handleChange}
-                name="qualities"
-                value={data.qualities}
             />
             <CheckBoxField
                 name="licence"

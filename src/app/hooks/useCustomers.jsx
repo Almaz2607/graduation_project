@@ -19,13 +19,6 @@ const CustomerProvider = ({ children }) => {
         getCustomers();
     }, []);
 
-    useEffect(() => {
-        if (error !== null) {
-            toast(error);
-            setError(null);
-        }
-    }, [error]);
-
     async function getCustomers() {
         try {
             const { content } = await customerService.get();
@@ -35,10 +28,19 @@ const CustomerProvider = ({ children }) => {
             errorCatcher(error);
         }
     }
+
     function errorCatcher(error) {
         const { message } = error.response.data;
         setError(message);
     }
+
+    useEffect(() => {
+        if (error !== null) {
+            toast(error);
+            setError(null);
+        }
+    }, [error]);
+
     return (
         <CustomerContext.Provider value={{ customers }}>
             {!isLoading ? children : <Loader />}

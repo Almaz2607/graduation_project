@@ -5,10 +5,11 @@ import useReviews from "../../hooks/useReviews";
 import RoomsList from "./roomSelectionPage";
 import RoomDetails from "./roomDetailsPage";
 import Loader from "../common/loader";
-// import RoomProvider from "../../hooks/useRoom";
+// import { useRoom } from "../../hooks/useRoom";
 
 const AvailableRooms = () => {
-    // const {rooms} =useRoom()
+    // const { rooms } = useRoom();
+
     const { rooms } = useRooms();
     const { reviews, pathName } = useReviews();
 
