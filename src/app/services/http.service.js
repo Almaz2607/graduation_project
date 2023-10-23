@@ -23,16 +23,16 @@ http.interceptors.request.use(
 );
 
 function transformData(data) {
-    return data
+    return data && !data._id
         ? Object.keys(data).map((key) => ({
               ...data[key]
           }))
-        : [];
+        : data;
 }
 
 http.interceptors.response.use(
     (res) => {
-        if (configFile.isFirebase) {
+        if (configFile.isFireBase) {
             res.data = { content: transformData(res.data) };
         }
         return res;

@@ -26,10 +26,18 @@ const RegisterForm = () => {
 
     const validatorConfig = {
         name: {
-            isRequired: { message: "Поле Имя обязательно для заполнения" }
+            isRequired: { message: "Имя обязательно для заполнения" },
+            min: {
+                message: "Имя должно состоять минимум из 3 символов",
+                value: 3
+            }
         },
         surname: {
-            isRequired: { message: "Поле Фамилия обязательно для заполнения" }
+            isRequired: { message: "Фамилия обязательно для заполнения" },
+            min: {
+                message: "Фамилия должна состоять минимум из 2 символов",
+                value: 2
+            }
         },
         email: {
             isRequired: { message: "Поле email обязательно для заполнения" },
