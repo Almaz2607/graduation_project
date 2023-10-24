@@ -7,7 +7,7 @@ import localStorageService, {
     setTokens
 } from "../services/localStorage.service";
 
-const httpAuth = axios.create({
+export const httpAuth = axios.create({
     baseURL: "https://identitytoolkit.googleapis.com/v1/",
     params: {
         key: process.env.REACT_APP_FIREBASE_KEY
@@ -36,7 +36,7 @@ const AuthProvider = ({ children }) => {
             const { code, message } = error.response.data.error;
             if (code === 400) {
                 switch (message) {
-                    case "INVALID_PASSWORD":
+                    case "INVALID_LOGIN_CREDENTIALS":
                         throw new Error("Email или пароль введены некорректно");
                     default:
                         throw new Error(
