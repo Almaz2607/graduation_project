@@ -26,11 +26,8 @@ const Page = () => {
                         <Switch>
                             <Route path="/" exact component={Home} />
                             <Route path="/about" component={About} />
+                            <Route path="/reviews" component={ReviewsPage} />
                             <ProtectedRoute
-                                path="/reviews"
-                                component={ReviewsPage}
-                            />
-                            <Route
                                 path="/selection/:roomId?"
                                 component={AvailableRooms}
                             />
