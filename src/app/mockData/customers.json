@@ -1,42 +1,42 @@
 [
     {
         "_id": "67customer7f6fgeed425259",
-        "firstname": "Андрей",
+        "name": "Андрей",
         "surname": "Пархоменко",
         "email": "grip6R@mail.ru",
         "password": "tT5io!ueU"
     },
     {
         "_id": "67customer7f6fgeed425097",
-        "firstname": "Виталий",
+        "name": "Виталий",
         "surname": "Ловчев",
         "email": "pRime2@mail.ru",
         "password": "TEes053ts"
     },
     {
         "_id": "67customer7f6fgeed422547",
-        "firstname": "Марина",
+        "name": "Марина",
         "surname": "Чиркина",
         "email": "le22R@mail.ru",
         "password": "m91!PRhsr"
     },
     {
         "_id": "67customer7f6fgeed400152",
-        "firstname": "Ирина",
+        "name": "Ирина",
         "surname": "Костина",
         "email": "m77GfR@mail.ru",
         "password": "Yy69!Oxvt"
     },
     {
         "_id": "67customer7f6fgeed429195",
-        "firstname": "Николай",
+        "name": "Николай",
         "surname": "Зайцев",
         "email": "Gro55Mil@mail.ru",
         "password": "53xBlsiP4"
     },
     {
         "_id": "67customer7f6fgeed418950",
-        "firstname": "Наталья",
+        "name": "Наталья",
         "surname": "Ковнацкая",
         "email": "Mali90cpR@mail.ru",
         "password": "WTi92!isp"

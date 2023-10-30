@@ -6,6 +6,7 @@ import customerService from "../services/customer.service";
 import localStorageService, {
     setTokens
 } from "../services/localStorage.service";
+import Loader from "../components/common/loader";
 
 export const httpAuth = axios.create({
     baseURL: "https://identitytoolkit.googleapis.com/v1/",
@@ -20,7 +21,8 @@ export const useAuth = () => {
 };
 
 const AuthProvider = ({ children }) => {
-    const [currentCustomer, setCustomer] = useState({});
+    const [currentCustomer, setCustomer] = useState();
+    const [isLoading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
     async function logIn({ email, password }) {
@@ -30,7 +32,7 @@ const AuthProvider = ({ children }) => {
                 { email, password, returnSecureToken: true }
             );
             setTokens(data);
-            getCustomerData();
+            await getCustomerData();
         } catch (error) {
             errorCatcher(error);
             const { code, message } = error.response.data.error;
@@ -90,12 +92,16 @@ const AuthProvider = ({ children }) => {
             setCustomer(content);
         } catch (error) {
             errorCatcher(error);
+        } finally {
+            setLoading(false);
         }
     }
 
     useEffect(() => {
         if (localStorageService.getAccessToken()) {
             getCustomerData();
+        } else {
+            setLoading(false);
         }
     }, []);
 
@@ -108,7 +114,7 @@ const AuthProvider = ({ children }) => {
 
     return (
         <AuthContext.Provider value={{ signUp, logIn, currentCustomer }}>
-            {children}
+            {isLoading ? <Loader /> : children}
         </AuthContext.Provider>
     );
 };

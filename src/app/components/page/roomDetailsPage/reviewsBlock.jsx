@@ -12,12 +12,9 @@ const ReviewsBlock = ({ path, reviews }) => {
                 <div className="room-reviews__items">
                     {reviews.map((review) => (
                         <GuestReview
-                            key={review._id}
                             path={path}
-                            text={review.text}
-                            name={review.name}
-                            surname={review.surname}
-                            date={review.creationDate}
+                            key={review.created_at}
+                            review={review}
                         />
                     ))}
                 </div>

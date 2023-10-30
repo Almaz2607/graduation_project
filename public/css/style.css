@@ -144,7 +144,6 @@ body {
 .link-block {
     display: inline-block;
     padding: 8px 25px;
-    /* background-color: #8c5151; */
     background-color: rgb(221, 179, 124);
 }
 .link-block___value {
@@ -627,12 +626,18 @@ body {
 .reviews__body {
     padding: 0 20px;
 }
+.reviews__header {
+    margin-left: 40px;
+}
 .reviews__row {
     display: flex;
     flex-wrap: wrap;
 }
-.reviews__header {
-    margin-left: 40px;
+.reviews__link {
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .reviews__item {
     padding: 10px;

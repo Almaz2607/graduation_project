@@ -1,18 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import RoomsStatus from "./roomsStatus";
-import api from "../../../api";
 import ShowRooms from "./showRooms";
 import { useParams } from "react-router-dom";
 import Loader from "../../common/loader";
+import { useRoom } from "../../../hooks/useRooms";
 
 const Admin = () => {
-    const [rooms, setRooms] = useState([]);
+    const { rooms } = useRoom();
+
     const params = useParams();
     const { status } = params;
-
-    useEffect(() => {
-        api.rooms.fetchAll().then((data) => setRooms(data));
-    }, []);
 
     const freeRooms = rooms.filter((room) => room.available === true);
     const reservedRooms = rooms.filter((room) => room.available === false);

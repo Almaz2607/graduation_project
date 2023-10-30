@@ -1,17 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { orderBy } from "lodash";
 import SelectionBlock from "../common/selectionBlock";
 import GuestReview from "../common/guestReview";
-import Loader from "../common/loader";
-import useReviews from "../../hooks/useReviews";
+import { useReview } from "../../hooks/useReviews";
 import ImageBlock from "../common/imageBlock";
 
 const About = () => {
-    const { reviews, pathName } = useReviews();
+    const { reviews, pathName } = useReview();
 
-    if (reviews.length === 0) return <Loader />;
-
-    const cropReviews = reviews.slice(0, 6);
+    const sortedReviews = orderBy(reviews, ["created_at"], ["desc"]);
+    const cropReviews = sortedReviews.slice(0, 6);
 
     return (
         <div className="page-about about">
@@ -171,12 +170,19 @@ const About = () => {
                                 <GuestReview
                                     path={pathName}
                                     key={review._id}
-                                    text={review.text}
-                                    name={review.name}
-                                    surname={review.surname}
-                                    date={review.creationDate}
+                                    review={review}
                                 />
                             ))}
+                        </div>
+                        <div className="reviews__link">
+                            <div className="link-block">
+                                <Link
+                                    to="/reviews"
+                                    className="link-block___value"
+                                >
+                                    Оставить отзыв
+                                </Link>
+                            </div>
                         </div>
                     </div>
                 </div>

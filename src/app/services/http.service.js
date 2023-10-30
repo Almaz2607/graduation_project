@@ -3,7 +3,6 @@ import { toast } from "react-toastify";
 import configFile from "../config.json";
 import localStorageService from "./localStorage.service";
 import { httpAuth } from "../hooks/useAuth";
-// import authService from "./auth.service";
 
 const http = axios.create({
     baseURL: configFile.apiEndpoint
@@ -31,6 +30,10 @@ http.interceptors.request.use(
                     localId: data.user_id,
                     expiresIn: data.expires_in
                 });
+            }
+            const accessToken = localStorageService.getAccessToken();
+            if (accessToken) {
+                config.params = { ...config.params, auth: accessToken };
             }
         }
         return config;

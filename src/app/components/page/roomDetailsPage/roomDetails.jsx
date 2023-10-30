@@ -4,8 +4,12 @@ import Description from "./description";
 import IncludedPrice from "./includedPrice";
 import ReviewsBlock from "./reviewsBlock";
 import BackHistoryButton from "../../common/backButton";
+import { useReview } from "../../../hooks/useReviews";
 
-const RoomDetails = ({ roomId, rooms, reviews, path }) => {
+const RoomDetails = ({ roomId, rooms }) => {
+    const { reviews, pathName } = useReview();
+
+    const path = pathName.slice(0, 9);
     const id = roomId.slice(0, 24);
     const room = rooms.find((item) => item._id === id);
     const cropReviews = reviews.slice(0, 4);
@@ -28,9 +32,7 @@ const RoomDetails = ({ roomId, rooms, reviews, path }) => {
 
 RoomDetails.propTypes = {
     roomId: PropTypes.string.isRequired,
-    rooms: PropTypes.array.isRequired,
-    reviews: PropTypes.array.isRequired,
-    path: PropTypes.string.isRequired
+    rooms: PropTypes.array.isRequired
 };
 
 export default RoomDetails;

@@ -50,7 +50,7 @@ const useMockData = () => {
                 incrementCount();
             }
             for (const room of rooms) {
-                await httpService.put("selection/" + room._id, room);
+                await httpService.put("room/" + room._id, room);
                 incrementCount();
             }
         } catch (error) {

@@ -1,13 +1,18 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import LoginForm from "./ui/loginForm";
 import RegisterForm from "./ui/registerForm";
 
 const Login = () => {
+    const history = useHistory();
     const { type } = useParams();
     const [formType, setFormType] = useState(
         type === "register" ? type : "login"
     );
+
+    const handleClick = () => {
+        history.push("/");
+    };
 
     const toggleFormType = () => {
         setFormType((prevState) =>
@@ -18,10 +23,16 @@ const Login = () => {
     return (
         <div className="container my-5">
             <div className="row">
-                <div className="col-md-6 offset-md-3 shadow p-4">
+                <div className="col-md-4 offset-md-4 shadow p-4 position-relative">
+                    <button
+                        className="position-absolute top-0 end-0 btn btn-light btn-sm"
+                        onClick={handleClick}
+                    >
+                        <i className="bi bi-x-lg"></i>
+                    </button>
                     {formType === "register" ? (
                         <>
-                            <h3 className="mb-4">Register</h3>
+                            <h3 className="text-center mb-4">Регистрация</h3>
                             <RegisterForm />
                             <p className="mt-3">
                                 Есть аккаунт?{" "}
@@ -36,7 +47,9 @@ const Login = () => {
                         </>
                     ) : (
                         <>
-                            <h3 className="mb-4">Login</h3>
+                            <h3 className="text-center mb-4">
+                                Вход в личный кабинет
+                            </h3>
                             <LoginForm />
                             <p className="mt-3">
                                 Нет аккаунта?{" "}

@@ -1,11 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { getReviewClass } from "../../utils/reviews";
+import { displayDate } from "../../utils/displayDate";
 
-const GuestReview = ({ path, text, name, surname, date }) => {
+const GuestReview = ({ path, review }) => {
+    const { content, name, surname, created_at: created } = review;
+
     return (
         <div className={getReviewClass(path)}>
-            <p className="review-block__text">{text}</p>
+            <p className="review-block__text">{content}</p>
             <div className="review-block__signature">
                 <div className="review-block__photo">
                     {/* <img src="" alt="photo" /> */}
@@ -14,7 +17,9 @@ const GuestReview = ({ path, text, name, surname, date }) => {
                     <div className="review-block__name">
                         {name} {surname}
                     </div>
-                    <div className="review-block__date">{date}</div>
+                    <div className="review-block__date">
+                        {displayDate(created)}
+                    </div>
                 </div>
             </div>
         </div>
@@ -23,10 +28,7 @@ const GuestReview = ({ path, text, name, surname, date }) => {
 
 GuestReview.propTypes = {
     path: PropTypes.string.isRequired,
-    text: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    surname: PropTypes.string.isRequired,
-    date: PropTypes.string.isRequired
+    review: PropTypes.object.isRequired
 };
 
 export default GuestReview;
