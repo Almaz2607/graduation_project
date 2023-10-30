@@ -7,6 +7,7 @@ import localStorageService, {
     setTokens
 } from "../services/localStorage.service";
 import Loader from "../components/common/loader";
+import { useHistory } from "react-router-dom";
 
 export const httpAuth = axios.create({
     baseURL: "https://identitytoolkit.googleapis.com/v1/",
@@ -24,6 +25,7 @@ const AuthProvider = ({ children }) => {
     const [currentCustomer, setCustomer] = useState();
     const [isLoading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const history = useHistory();
 
     async function logIn({ email, password }) {
         try {
@@ -47,6 +49,12 @@ const AuthProvider = ({ children }) => {
                 }
             }
         }
+    }
+
+    function logOut() {
+        localStorageService.removeAuthData();
+        setCustomer(null);
+        history.push("/");
     }
 
     async function signUp({ email, password, ...rest }) {
@@ -113,7 +121,9 @@ const AuthProvider = ({ children }) => {
     }, [error]);
 
     return (
-        <AuthContext.Provider value={{ signUp, logIn, currentCustomer }}>
+        <AuthContext.Provider
+            value={{ signUp, logIn, currentCustomer, logOut }}
+        >
             {isLoading ? <Loader /> : children}
         </AuthContext.Provider>
     );

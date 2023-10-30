@@ -3,7 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import Home from "../components/page/home";
 import About from "../components/page/about";
 import Rooms from "../components/page/roomsPage/rooms";
-import Login from "../components/login";
+import Login from "./login";
 import Attractions from "../components/page/attractions";
 import Payment from "../components/page/payment";
 import ConfirmPayment from "../components/page/confirmPayment";
@@ -16,6 +16,7 @@ import RoomProvider from "../hooks/useRooms";
 import ReviewProvider from "../hooks/useReviews";
 import ReviewsPage from "../components/page/reviewsPage";
 import ProtectedRoute from "../components/common/protectedRoute";
+import LogOut from "./logOut";
 
 const Page = () => {
     return (
@@ -37,6 +38,7 @@ const Page = () => {
                                 component={Attractions}
                             />
                             <Route path="/login/:type?" component={Login} />
+                            <Route path="/logout" component={LogOut} />
                             <ProtectedRoute
                                 path="/admin/:status?"
                                 component={Admin}

@@ -32,12 +32,20 @@ export function getCustomerId() {
     return localStorage.getItem(CUSTOMERID_KEY);
 }
 
+export function removeAuthData() {
+    localStorage.removeItem(CUSTOMERID_KEY);
+    localStorage.removeItem(TOKEN_KEY);
+    localStorage.removeItem(REFRESH_KEY);
+    localStorage.removeItem(EXPIRES_KEY);
+}
+
 const localStorageService = {
     setTokens,
     getAccessToken,
     getRefreshToken,
     getTokenExpiresDate,
-    getCustomerId
+    getCustomerId,
+    removeAuthData
 };
 
 export default localStorageService;
